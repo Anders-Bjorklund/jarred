@@ -8,8 +8,9 @@ A small tool to **simplify uploading jars from your local Maven repository in ~/
 * Needs to have Maven available on the path. 
 
 Example: upload everything from local repository ( with current directory / pwd being ~\.m2\repository ) :  
-**jarred --site-id corporate-private-mvn**
-
+**jarred corporate-private-mvn**
+  
+  
 _corporate-private-mvn_ would already have to be defined in you settings.xml file in ~/.m2, similar to  
 ```
   <servers>
