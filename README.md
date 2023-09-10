@@ -4,4 +4,5 @@ A small tool to **simplify uploading jars from your local Maven repository in ~/
   
 * It can upload everything in your repository or a subset, based on regex inclusion ( all files / paths looking like... ) or regex exclusion ( everything but files / paths looking like... )  
 * If you would like to see the nuber of uploads before you begin, you can **--dry-run**
-* Written in Go and can be compiled to a binary for your favourite os. Needs to have Maven installed on your path. 
+* Written in Go and can be compiled to a binary for your Windows, Linux and / or MacOS
+* Needs to have Maven available on the path. 
