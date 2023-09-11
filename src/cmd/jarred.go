@@ -114,7 +114,7 @@ func main() {
 
 		// fmt.Printf("%s", text)
 
-		var proj project
+		var proj project = project{Packaging: "jar"}
 
 		_ = xml.Unmarshal(text, &proj)
 
@@ -132,18 +132,14 @@ func tree(path string, poms *[]string) {
 	}
 
 	for _, entry := range entries {
+		path := strings.Join([]string{path, entry.Name()}, string(os.PathSeparator))
 
 		if entry.IsDir() {
-			path := strings.Join([]string{path, entry.Name()}, string(os.PathSeparator))
 			tree(path, poms)
 		} else {
 			lowerName := strings.ToLower(entry.Name())
 			if strings.HasSuffix(lowerName, ".pom") {
-
-				file := strings.Join([]string{path, entry.Name()}, string(os.PathSeparator))
-				//fmt.Println(file)
-
-				*poms = append(*poms, file)
+				*poms = append(*poms, path)
 			}
 		}
 
